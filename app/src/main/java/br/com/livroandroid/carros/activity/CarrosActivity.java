@@ -4,6 +4,7 @@ import android.os.Bundle;
 import br.com.livroandroid.carros.R;
 import br.com.livroandroid.carros.fragments.CarrosFragment;
 
+//Lista todos os carros, de acordo com o tipo selecionado no NavDrawer
 public class CarrosActivity extends BaseActivity {
 
     @Override
@@ -15,6 +16,7 @@ public class CarrosActivity extends BaseActivity {
         //Mostra o botão voltar "up navigation"
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //Mostra o tipo do carro no título
+        //O tipo é passo no Intent do NavDrawer
         String tipo = getString(getIntent().getIntExtra("tipo", 0));
         getSupportActionBar().setTitle(tipo);
         //Adiciona o fragment com o mesmo Bundle (args) da intent

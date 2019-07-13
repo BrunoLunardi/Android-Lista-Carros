@@ -1,10 +1,12 @@
 package br.com.livroandroid.carros.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import br.com.livroandroid.carros.R;
+import br.com.livroandroid.carros.activity.CarroActivity;
 import br.com.livroandroid.carros.adapter.CarroAdapter;
 import br.com.livroandroid.carros.domain.Carro;
 import br.com.livroandroid.carros.domain.CarroService;
@@ -75,18 +78,21 @@ public class CarrosFragment extends BaseFragment {
         recyclerView.setAdapter(new CarroAdapter(getContext(), carros, onClickCarro()));
     }
 
-    //Da mesma forma que tratamos o evento de clique em um botão (onClickListener)
-    //Vamos tratar o evento de clique na lista
-    //A diferença é que a interface CarroAdapter.CarroOnCLickListener nós mesmo criamos
-    private CarroAdapter.CarroOnClickListener onClickCarro(){
+    // Da mesma forma que tratamos o evento de clique em um botão (OnClickListener)
+    // Vamos tratar o evento de clique na lista.
+    // A diferença é que a interface CarroAdapter.CarroOnClickListener nós mesmo criamos.
+    private CarroAdapter.CarroOnClickListener onClickCarro() {
         return new CarroAdapter.CarroOnClickListener() {
             @Override
             public void onClickCarro(View view, int idx) {
-                //Carro selecionado
+                // Abre a tela de detalhes com o carro selecionado.
                 Carro c = carros.get(idx);
-                //Mostra um alerta rápido com um toast
-                Toast.makeText(getContext(), "Carro: " + c.nome, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), CarroActivity.class);
+                intent.putExtra("carro", c);
+                startActivity(intent);
+
             }
         };
     }
+
 }
