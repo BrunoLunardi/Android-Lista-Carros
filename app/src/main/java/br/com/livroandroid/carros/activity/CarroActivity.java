@@ -1,6 +1,9 @@
 package br.com.livroandroid.carros.activity;
 
 import android.os.Bundle;
+
+//import org.parceler.Parcels;
+
 import br.com.livroandroid.carros.R;
 import br.com.livroandroid.carros.domain.Carro;
 import br.com.livroandroid.carros.fragments.CarroFragment;
@@ -18,7 +21,10 @@ public class CarroActivity extends BaseActivity {
         //Configura a Toolbar como a action bar
         setUpToolbar();
         //Titulo da Toolbar e botão up navigation
-        Carro c = (Carro) getIntent().getSerializableExtra("carro");
+        //Carro c = (Carro) getIntent().getSerializableExtra("carro");//esta é para serializable
+        //lê objeto Parcelable e transforma em um objeto Carro (Biblioteca Parceler importada no gradle)
+        //Carro c = (Carro) Parcels.unwrap(getIntent().getParcelableExtra("carro"));//esta é para parcelable da biblioteca
+        Carro c = (Carro) getIntent().getParcelableExtra("carro");//esta é para parcelable
         getSupportActionBar().setTitle(c.nome);
         //Liga o botão up navigation para voltar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

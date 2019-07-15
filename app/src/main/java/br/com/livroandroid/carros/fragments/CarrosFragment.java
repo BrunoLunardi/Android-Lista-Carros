@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//import org.parceler.Parcels;
+
 import java.util.List;
 
 import br.com.livroandroid.carros.R;
@@ -88,7 +90,9 @@ public class CarrosFragment extends BaseFragment {
                 // Abre a tela de detalhes com o carro selecionado.
                 Carro c = carros.get(idx);
                 Intent intent = new Intent(getContext(), CarroActivity.class);
-                intent.putExtra("carro", c);
+                //Parcels.wrap -> cria um objeto Parcelable em tempo de execução
+                //intent.putExtra("carro", Parcels.wrap(c));//converte o objeto para Parcelable
+                intent.putExtra("carro", c);//converte o objeto para Parcelable
                 startActivity(intent);
 
             }
