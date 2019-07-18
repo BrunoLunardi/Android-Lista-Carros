@@ -18,13 +18,23 @@
         <!-- Toolbar -->
         <include layout="@layout/include_toolbar" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            />
-
         <!-- Conteúdo aqui (neste layout podemos configurar o padding para o espaçamento) -->
+        <!-- Cria navegação lateral com tabs/abas (Classico, esportivo e luxo) -->
+        <!-- Quantidade definidas em TabsAdapter getCount() será o nḿero de abas -->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary" />
+
+        <!-- Será preenchido pelo adapter/TabsAdapter.java, que fornecerá quantas página laterais existirão -->
+        <!-- As paginas laterais será a classe CarrosFragment -->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:background="@android:color/white" />
 
     </LinearLayout>
 
