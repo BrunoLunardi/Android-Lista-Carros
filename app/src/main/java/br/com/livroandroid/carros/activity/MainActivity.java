@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 import br.com.livroandroid.carros.R;
 import br.com.livroandroid.carros.adapter.TabsAdapter;
@@ -21,6 +22,13 @@ public class MainActivity extends BaseActivity {
         setupNavDrawer();
         //Cria as tabs com os tipos dos carros (para navegação lateral)
         setupViewPagerTabs();
+        //Floating Action Button (FAB)
+        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                snack(v, "Exemplo de FAB Button.");
+            }
+        });
     }
 
     //Configura o ViewPager + Tabs

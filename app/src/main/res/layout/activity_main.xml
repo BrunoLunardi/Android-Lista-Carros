@@ -36,6 +36,17 @@
             android:layout_weight="1"
             android:background="@android:color/white" />
 
+        <!-- Adiciona o Floating Action Button (FAB) na tela -->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:src="@android:drawable/ic_input_add"
+            android:tint="#fff000" />
+
     </LinearLayout>
 
     <!-- Bloco 2: nav drawer -->
