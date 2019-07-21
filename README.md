@@ -24,3 +24,7 @@ Arquivos .env (raiz do projeto - usado para teste local) e /config/database.php
 --Instalação do bootstrap:
 
 composer require twbs/bootstrap
+
+--JQuery
+
+https://code.jquery.com/jquery-3.4.1.min.js
