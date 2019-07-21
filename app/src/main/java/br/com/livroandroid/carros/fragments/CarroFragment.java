@@ -38,9 +38,11 @@ public class CarroFragment extends BaseFragment {
         tDesc.setText(carro.desc);
         //Mostra a foto do carro no ImageView
         //A lib Picasso está dando uma força aqui
+        /*
+        codigo removido, pois a iamgem está sendo tratada em activy_carro para ser exibida no Toolbar...
         final ImageView imgView = (ImageView) view.findViewById(R.id.img);
         Picasso.with(getContext()).load(carro.urlFoto).fit().into(imgView);
-
+        */
         return view;
     }
 
