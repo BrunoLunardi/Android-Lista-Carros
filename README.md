@@ -28,3 +28,7 @@ composer require twbs/bootstrap
 --JQuery
 
 https://code.jquery.com/jquery-3.4.1.min.js
+
+--Instalar classe HTML no laravel. (laravelcollective mantém classes removida do core do Laravel):
+
+composer require "laravelcollective/html":"^5.3.0"
