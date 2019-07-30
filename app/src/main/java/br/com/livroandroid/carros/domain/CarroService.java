@@ -14,6 +14,10 @@ import livroandroid.lib.utils.XMLUtils;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 //Classe para criar uma lista de carros de forma fixa na memória
 //o parãmetro tipo será enviado do fragment (CarrosFragment), para criar a lista correta de carros
 public class CarroService {
@@ -44,12 +48,25 @@ public class CarroService {
         return carros;
      */
 
+        /*
+            XML
+
         //leitura do arquivo xml do tipo do carro (res/raw/carros_tipo.xml)
         String xml = readFile(context, tipo);
         //lista de carros xml
         List<Carro> carros = parseXML(context, xml);
         //retorna lista de carros
         return carros;
+
+         */
+
+        //JSON
+        String json = readFile(context, tipo);
+        //lista de carros json
+        List<Carro> carros = parserJSON(context, json);
+        //retorna lista de carros
+        return carros;
+
     }
 
     //Faz a leitura do arquivo que está na pasta /res/raw
@@ -62,6 +79,7 @@ public class CarroService {
         return FileUtils.readRawFileString(context, R.raw.carros_luxo, "UTF-8");
     }
 
+    /*
     //Faz o parser do XML e cria a lista de carros
     public static List<Carro> parseXML(Context context, String xml){
         List<Carro> carros = new ArrayList<>();
@@ -92,4 +110,40 @@ public class CarroService {
 
         return carros;
     }
+    */
+
+    //Faz o parser do XML e cria a lista de carros
+    public static List<Carro> parserJSON(Context context, String json) throws IOException{
+        List<Carro> carros = new ArrayList<>();
+        try{
+            //Lê o array de carros do JSON
+            JSONArray jsonCarros = new JSONArray(json);
+            //Insere cada carro na lista
+            for(int i = 0; i < jsonCarros.length(); i++){
+                JSONObject jsonCarro = jsonCarros.getJSONObject(i);
+                Carro c = new Carro();
+                //Lê as informações de cada carro
+                c.nome = jsonCarro.optString("nome");
+                c.desc = jsonCarro.optString("desc");
+                c.urlFoto = jsonCarro.optString("url_foto");
+                c.urlInfo = jsonCarro.optString("url_info");
+                c.urlVideo = jsonCarro.optString("url_video");
+                c.latitude = jsonCarro.optString("latitude");
+                c.longitude  = jsonCarro.optString("longitude");
+
+                if(LOG_ON){
+                    Log.d(TAG, "Carro " + c.nome + " > " + c.urlFoto);
+                }
+                carros.add(c);
+            }
+            if(LOG_ON){
+                Log.d(TAG, carros.size() + " encontrados. ");
+            }
+        }catch (JSONException e){
+            throw new IOException(e.getMessage(), e);
+        }
+
+        return carros;
+    }
+
 }
