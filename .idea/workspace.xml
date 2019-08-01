@@ -16,12 +16,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b19d2c81-86ca-4ec7-be6c-a03d34d80e6a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="b19d2c81-86ca-4ec7-be6c-a03d34d80e6a" name="Default" comment="Leitura de arquivo XML">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/domain/CarroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/domain/CarroService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/carros_classicos.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/carros_esportivos.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/carros_luxo.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,7 +47,7 @@
       <file leaf-file-name="fragment_carro.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_carro.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2130">
+            <state relative-caret-position="439">
               <caret line="142" column="15" selection-start-line="142" selection-start-column="15" selection-end-line="142" selection-end-column="15" />
             </state>
           </provider>
@@ -56,30 +56,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CarroService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CarroService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/domain/CarroService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="207">
+              <caret line="115" column="89" selection-start-line="115" selection-start-column="89" selection-end-line="115" selection-end-column="89" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2009#2027#0" expanded="true" />
+                <element signature="e#2145#2164#0" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="carros_classicos.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/carros_classicos.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="CarrosFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/fragments/CarrosFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="90">
+              <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -107,7 +102,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Parser-XML-JSON-Testes-Unitarios" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -2384,14 +2379,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/fragments/SiteLivroFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_carros.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/domain/CarroService.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_carro.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/adapter/CarroAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/activity/CarrosActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/domain/Carro.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/fragments/CarrosFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/adapter/TabsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_carros.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/activity/MainActivity.java" />
@@ -2401,6 +2394,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/activity/CarroActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/fragments/CarroFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_carro.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/fragments/CarrosFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/domain/CarroService.java" />
       </list>
     </option>
   </component>
@@ -2674,11 +2669,26 @@
       <option name="project" value="LOCAL" />
       <updated>1564177765635</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Ateração de layout do frament_carro">
+      <created>1564178394430</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1564178394430</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Leitura de arquivo XML">
+      <created>1564524463401</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1564524463401</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -2689,50 +2699,27 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Preview" order="3" weight="0.26656026" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3295082" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Logcat" order="7" weight="0.23114754" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25778133" />
-      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.41311476" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25778133" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.41311476" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Build Variants" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18994413" />
-      <window_info active="true" anchor="right" id="Preview" order="3" visible="true" weight="0.26656026" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Logcat" order="7" weight="0.23114754" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3295082" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.41311476" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Captures" order="2" weight="0.25" />
-      <window_info anchor="right" id="Gradle" order="3" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info id="Designer" order="2" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.3147541" />
@@ -2779,7 +2766,8 @@
     <MESSAGE value="Material Design na tela de detalhes do carro" />
     <MESSAGE value="Ateração frament_carro" />
     <MESSAGE value="Ateração de layout do frament_carro" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ateração de layout do frament_carro" />
+    <MESSAGE value="Leitura de arquivo XML" />
+    <option name="LAST_COMMIT_MESSAGE" value="Leitura de arquivo XML" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/fragments/BaseFragment.java">
@@ -2880,11 +2868,6 @@
         <state relative-caret-position="75">
           <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/carros_luxo.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Android/Sdk/platforms/android-28/data/res/drawable/sym_def_app_icon.xml">
@@ -3147,9 +3130,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/carros_luxo.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_carro.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2130">
+        <state relative-caret-position="439">
           <caret line="142" column="15" selection-start-line="142" selection-start-column="15" selection-end-line="142" selection-end-column="15" />
         </state>
       </provider>
@@ -3157,26 +3145,28 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/domain/CarroService.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/carros_esportivos.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/fragments/CarrosFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="90">
+          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/carros_classicos.json">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/livroandroid/carros/domain/CarroService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state />
+        <state relative-caret-position="207">
+          <caret line="115" column="89" selection-start-line="115" selection-start-column="89" selection-end-line="115" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2009#2027#0" expanded="true" />
+            <element signature="e#2145#2164#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

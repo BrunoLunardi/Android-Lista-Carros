@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 //import org.parceler.Parcels;
 
+import java.io.IOException;
 import java.util.List;
 
 import br.com.livroandroid.carros.R;
@@ -74,10 +75,14 @@ public class CarrosFragment extends BaseFragment {
 
     //cria a lista de carros
     private void taskCarros() {
-        //Busca os carros pelo tipo
-        this.carros = CarroService.getCarros(getContext(), tipo);
-        //É aqui que utiliza o adapter. O adapter fornece o conteúdo para a lista
-        recyclerView.setAdapter(new CarroAdapter(getContext(), carros, onClickCarro()));
+        try {
+            //Busca os carros pelo tipo
+            this.carros = CarroService.getCarros(getContext(), tipo);
+            //É aqui que utiliza o adapter. O adapter fornece o conteúdo para a lista
+            recyclerView.setAdapter(new CarroAdapter(getContext(), carros, onClickCarro()));
+        }catch (IOException e){
+            Log.e("livro", e.getMessage(), e);
+        }
     }
 
     // Da mesma forma que tratamos o evento de clique em um botão (OnClickListener)
