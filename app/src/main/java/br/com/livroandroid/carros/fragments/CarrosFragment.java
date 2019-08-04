@@ -1,5 +1,6 @@
 package br.com.livroandroid.carros.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -27,6 +28,8 @@ import br.com.livroandroid.carros.domain.CarroService;
 //import br.com.livroandroid.carros.fragments.BaseFragment;
 
 public class CarrosFragment extends BaseFragment {
+    //exibir animação enquanto a thread para acessar web service estiver sendo executada
+    private ProgressDialog dialog;
 
   protected RecyclerView recyclerView;
   //Tipo do carro passado pelos argumentos
@@ -75,14 +78,41 @@ public class CarrosFragment extends BaseFragment {
 
     //cria a lista de carros
     private void taskCarros() {
-        try {
-            //Busca os carros pelo tipo
-            this.carros = CarroService.getCarros(getContext(), tipo);
-            //É aqui que utiliza o adapter. O adapter fornece o conteúdo para a lista
-            recyclerView.setAdapter(new CarroAdapter(getContext(), carros, onClickCarro()));
-        }catch (IOException e){
-            Log.e("livro", e.getMessage(), e);
-        }
+        //Mostra uma janela de progresso
+        dialog = ProgressDialog.show(getActivity(), "Exemplo",
+                "Por favor, aguarde...", false, true);
+        //Thread para acessar web service
+        new Thread(){
+            @Override
+            public void run(){
+
+                try {
+                    //Busca os carros em uma thread
+                    carros = CarroService.getCarros(getContext(), tipo);
+                    //Atualiza a lista na UI Thread
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //É aqui que utiliza o adapter. O adapter fornece o conteúdo para a lista
+                            recyclerView.setAdapter(new CarroAdapter(getContext(), carros,
+                                    onClickCarro()));
+                            Toast.makeText(getActivity(), "AH", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }catch (IOException e){
+                    Log.e("livro", e.getMessage(), e);
+                } finally {
+                    //Fecha a janela de progresso
+                    dialog.dismiss();
+                }
+                    /*
+                    //Busca os carros pelo tipo
+                    this.carros = CarroService.getCarros(getContext(), tipo);
+                    //É aqui que utiliza o adapter. O adapter fornece o conteúdo para a lista
+                    recyclerView.setAdapter(new CarroAdapter(getContext(), carros, onClickCarro()));
+                    */
+            }
+        }.start();
     }
 
     // Da mesma forma que tratamos o evento de clique em um botão (OnClickListener)

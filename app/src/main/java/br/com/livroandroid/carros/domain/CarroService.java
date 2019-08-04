@@ -17,6 +17,8 @@ import org.w3c.dom.Node;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+//biblioteca para acessar webservice
+import livroandroid.lib.utils.HttpHelper;
 
 //Classe para criar uma lista de carros de forma fixa na memória
 //o parãmetro tipo será enviado do fragment (CarrosFragment), para criar a lista correta de carros
@@ -25,6 +27,9 @@ public class CarroService {
     private static final boolean LOG_ON = false;
 
     private static final String TAG = "CarroService";
+
+    //url para acessar webservice com JSON
+    private static final String URL = "http://www.livroandroid.com.br/livro/carros/v2/carros_{tipo}.json";
 
     //Lista de carros
     //Tratamento de exceções será feito no java/fragments/CarrosFragment
@@ -60,14 +65,36 @@ public class CarroService {
 
          */
 
+        /*
         //JSON
         String json = readFile(context, tipo);
         //lista de carros json
         List<Carro> carros = parserJSON(context, json);
         //retorna lista de carros
         return carros;
+        */
+        //acessar lista via webservice
+        String tipoString = getTipo(tipo);
+        String url = URL.replace("{tipo}", tipoString);
+        //Faz a requisição HTTP no servidor e retorna a string com o conteúdo
+        HttpHelper http = new HttpHelper();
+        String json = http.doGet(url);
+        List<Carro> carros = parserJSON(context, json);
+        return carros;
 
     }
+
+    //Converte a constante para string, para criar a URL do web service
+    private static String getTipo(int tipo){
+        if(tipo == R.string.classicos){
+            return "classicos";
+        }else if(tipo == R.string.esportivos){
+            return "esportivos";
+        }
+        return "luxo";
+    }
+
+    /*
 
     //Faz a leitura do arquivo que está na pasta /res/raw
     private static String readFile(Context context, int tipo) throws IOException{
@@ -78,7 +105,7 @@ public class CarroService {
         }
         return FileUtils.readRawFileString(context, R.raw.carros_luxo, "UTF-8");
     }
-
+*/
     /*
     //Faz o parser do XML e cria a lista de carros
     public static List<Carro> parseXML(Context context, String xml){
@@ -111,6 +138,7 @@ public class CarroService {
         return carros;
     }
     */
+
 
     //Faz o parser do XML e cria a lista de carros
     public static List<Carro> parserJSON(Context context, String json) throws IOException{
