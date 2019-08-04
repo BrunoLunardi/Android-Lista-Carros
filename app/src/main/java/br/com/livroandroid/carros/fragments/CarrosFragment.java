@@ -2,6 +2,7 @@ package br.com.livroandroid.carros.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -78,6 +79,43 @@ public class CarrosFragment extends BaseFragment {
 
     //cria a lista de carros
     private void taskCarros() {
+        //Busca os carros: Dispara a task
+        //Dispara a Thread para listagem de carros do web service
+        new GetCarrosTask().execute();
+    }
+
+    //Task para buscar os carros
+    //AsyncTask é uma biblioteca de threads
+    private class GetCarrosTask extends AsyncTask<Void, Void, List<Carro>>{
+        //É aqui que fica o processamento pesado
+        //Executa em segundo plano (background)
+        //O retorno é passado para o método onPostExecute()
+        @Override
+        protected List<Carro> doInBackground(Void... params){
+            try {
+                //Busca os carros em background (Thread)
+                //Passa a lista de carros localizados para o método onPostExecute()
+                return CarroService.getCarros(getContext(), tipo);
+            }catch (IOException e){
+                Log.e(TAG, "Erro: " + e.getMessage());
+                return null;
+            }
+        }
+
+        //Atualiza a inteface
+        //Recebe resultado de doInBackground
+        protected void onPostExecute(List<Carro> carros){
+            if(carros != null){
+                //passa a lista de carros do web service (doInBackground)
+                    //atribui os carros para a classr CarrosFragment -> carros
+                CarrosFragment.this.carros = carros;
+                //Atualiza a view na UI Thread
+                recyclerView.setAdapter(new CarroAdapter(getContext(), carros, onClickCarro()));
+            }
+        }
+
+    }
+    /*
         //Mostra uma janela de progresso
         dialog = ProgressDialog.show(getActivity(), "Exemplo",
                 "Por favor, aguarde...", false, true);
@@ -105,16 +143,16 @@ public class CarrosFragment extends BaseFragment {
                     //Fecha a janela de progresso
                     dialog.dismiss();
                 }
-                    /*
+
                     //Busca os carros pelo tipo
                     this.carros = CarroService.getCarros(getContext(), tipo);
                     //É aqui que utiliza o adapter. O adapter fornece o conteúdo para a lista
                     recyclerView.setAdapter(new CarroAdapter(getContext(), carros, onClickCarro()));
-                    */
+
             }
         }.start();
     }
-
+    */
     // Da mesma forma que tratamos o evento de clique em um botão (OnClickListener)
     // Vamos tratar o evento de clique na lista.
     // A diferença é que a interface CarroAdapter.CarroOnClickListener nós mesmo criamos.
